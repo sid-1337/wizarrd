@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SLIET Mentorship Platform</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            margin: 0;
+            padding: 0;
+        }
+        header, nav, main, footer {
+            padding: 20px;
+        }
+        nav ul {
+            list-style-type: none;
+            padding: 0;
+        }
+        nav ul li {
+            display: inline;
+            margin-right: 10px;
+        }
+        .hidden {
+            display: none;
+        }
+        #google-signin-button {
+            display: inline-block;
+            background-color: #4285F4;
+            color: white;
+            padding: 10px 20px;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+    </style>
+    <script src="https://apis.google.com/js/platform.js" async defer></script>
+    <meta name="google-signin-client_id" content="YOUR_GOOGLE_CLIENT_ID.apps.googleusercontent.com">
+</head>
+<body>
+    <header>
+        <h1>SLIET Mentorship Platform</h1>
+    </header>
+
+    <nav id="main-nav" class="hidden">
+        <ul>
+            <li><a href="#home">Home</a></li>
+            <li><a href="#mentors">Mentors</a></li>
+            <li><a href="#booking">Book a Session</a></li>
+            <li><a href="#profile">My Profile</a></li>
+            <li><a href="#" id="logout-link">Logout</a></li>
+        </ul>
+    </nav>
+
+    <main>
+        <section id="login-section">
+            <h2>Login</h2>
+            <form id="login-form">
+                <label for="username">Username:</label>
+                <input type="text" id="username" name="username" required>
+                <label for="password">Password:</label>
+                <input type="password" id="password" name="password" required>
+                <button type="submit">Login</button>
+            </form>
+            <div id="google-signin-button">Sign in with Google</div>
+        </section>
+
+        <section id="main-content" class="hidden">
+            <section id="home">
+                <h2>Welcome to SLIET Mentorship Platform</h2>
+                <p>Connect with faculty mentors for academic and career guidance.</p>
+            </section>
+
+            <section id="mentors">
+                <h2>Our Mentors</h2>
+                <div id="mentor-list">
+                    <!-- Mentor profiles will be dynamically added here -->
+                </div>
+            </section>
+
+            <section id="booking">
+                <h2>Automated Booking System</h2>
+                <div id="booking-container">
+                    <div id="mentor-selection">
+                        <h3>Select a Mentor</h3>
+                        <select id="mentor-select">
+                            <!-- Mentor options will be dynamically added here -->
+                        </select>
+                    </div>
+                    <div id="availability-calendar">
+                        <h3>Mentor Availability</h3>
+                        <div id="calendar">
+                            <!-- Calendar will be dynamically generated here -->
+                        </div>
+                    </div>
+                    <div id="time-slot-selection">
+                        <h3>Available Time Slots</h3>
+                        <div id="time-slots">
+                            <!-- Time slots will be dynamically added here -->
+                        </div>
+                    </div>
+                    <div id="booking-confirmation">
+                        <h3>Confirm Booking</h3>
+                        <form id="booking-form">
+                            <input type="hidden" id="selected-mentor" name="mentor">
+                            <input type="hidden" id="selected-date" name="date">
+                            <input type="hidden" id="selected-time-slot" name="time-slot">
+                            <button type="submit" id="confirm-booking">Book Session</button>
+                        </form>
+                    </div>
+                </div>
+            </section>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2023 SLIET Mentorship Platform. All rights reserved.</p>
+    </footer>
+
+    <script src="auth.js"></script>
+    <script src="mentors.js"></script>
+    <script src="booking.js"></script>
+    <script src="main.js"></script>
+</body>
+</html>
